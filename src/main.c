@@ -1,9 +1,14 @@
-#include "parser.h"
+#include "parser.c"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(void) {
   const char *envVar = getenv("SURTUR_TEST");
+  if (envVar == NULL) {
+    fprintf(stderr, "Failed to get SURTUR_TEST env var\n");
+    exit(EXIT_FAILURE);
+  }
   size_t valuesSize = 0;
   char **values = parseEnvVar(envVar, &valuesSize);
   // Print the values

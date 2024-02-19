@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "parser.h"
 
 char **parseEnvVar(const char *envVar, size_t *valuesSize) {
   const char *cur_ch = envVar;
