@@ -1,27 +1,16 @@
-#include "parser.c"
-#include <stdio.h>
-#include <stdlib.h>
+#include "tests.h"
 #include <string.h>
 
-int main(void) {
-  const char *envVar = getenv("SURTUR_TEST");
-  if (envVar == NULL) {
-    fprintf(stderr, "Failed to get SURTUR_TEST env var\n");
-    exit(EXIT_FAILURE);
-  }
-  size_t valuesSize = 0;
-  char **values = parseEnvVar(envVar, &valuesSize);
-  // Print the values
+void test();
 
-  for (size_t i = 0; i < valuesSize; i++) {
-    printf("value: %s\n", values[i]);
-  }
+int main(void) { test(); }
 
-  // Free the values array
-  for (size_t i = 0; i < valuesSize; i++) {
-    free(values[i]);
-  }
-  free(values);
+void test() {
+  TEST(my_test, {
+    int x = 400;
+    int y = 200;
+    ASSERT(x == y);
+  });
 
-  return 0;
+  TEST(my_second_test, { ASSERT(!strcmp("hello", "bye")); });
 }
