@@ -1,6 +1,7 @@
 #include "stdio.h"
 #include "util.h"
 #include <stdlib.h>
+#include "stdbool.h"
 
 #pragma once
 
@@ -8,10 +9,12 @@
   {                                                                            \
     char name[] = #test_name;                                                  \
     if (name[0] != '\0' && name[0] != '!') {                                   \
-      printf("%sRunning Test%s: %s%s%s\n", BLUE, WHITE, BOLD, name, STANDARD); \
-      block;                                                                   \
-      printf("Test %s%s%s, %spassed!%s\n", BOLD, name, STANDARD, GREEN,        \
-             WHITE);                                                           \
+      bool runTestFlag = canRunTest(name);                                                                         \
+      if (runTestFlag) {                                                       \
+        printf("%sRunning Test%s: %s%s%s\n", BLUE, WHITE, BOLD, name, STANDARD); \
+        block;                                                                   \
+        printf("Test %s%s%s, %spassed!%s\n", BOLD, name, STANDARD, GREEN,        \
+             WHITE);                                                           } \
     }                                                                          \
   }
 
