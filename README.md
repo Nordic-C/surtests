@@ -4,7 +4,7 @@ A testing framework for C using the surtur build tool. This was originally built
 
 # Documentation
 
-**IMPORTANT: This was only tested only linux, so no gurantee for Windows and macOS support**
+**IMPORTANT: This was only tested on linux, so no gurantee for Windows and macOS support**
 
 ## Creating your tests
 
