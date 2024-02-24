@@ -8,7 +8,7 @@ A testing framework for C using the surtur build tool. This was originally built
 
 ## Creating your tests
 
-> For an example look at: `example/src/main.c`
+> For an example look at: [Example](example/src/main.c)
 
 First we need to include "tests.h". **(This does not work yet since dependencies are not done. If you still want to use this, copy the code into your own project)**
 
@@ -50,4 +50,10 @@ You need to manually enable tests. For this pass `-DTESTS` to your compiler. Thi
 Example with gcc:
 `gcc main.c -DTESTS -o main`
 
-Before executing your code you need to specify your
+Before executing your code you need to specify the tests that should be run. Not doing so will run all tests.
+Do this by running `export SURTUR_TESTS="my_test"` or multiple with `export SURTUR_TESTS="my_test,your_test"` (**NOTE: "Export" only works on unix-like systems**)
+
+After this you can do:
+`./main`
+
+And the specified tests should be ran.
