@@ -45,10 +45,11 @@ Run multiple tests: `surtur test my_test,your_test,his_test` (The names are sepe
 
 **If you don't use surtur**:
 
-You need to manually enable tests. For this pass `-DTESTS` to your compiler. This will **D**efine **TESTS** so the macro definition is used correctly and executes your tests
-
+Tests will be enabled by default, but can be disabled with -DNOTESTS
 Example with gcc:
-`gcc main.c -DTESTS -o main`
+`gcc main.c -DNOTESTS -o main`
+
+When you do use tests however, you need to specify which ones should be ran.
 
 Before executing your code you need to specify the tests that should be run. Not doing so will run all tests.
 Do this by running `export SURTUR_TESTS="my_test"` or multiple with `export SURTUR_TESTS="my_test,your_test"` (**NOTE: "Export" only works on unix-like systems**)
