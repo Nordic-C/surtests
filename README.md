@@ -8,7 +8,7 @@ A testing framework for C using the surtur build tool. This was originally built
 
 ## Creating your tests
 
-> For an example look at: [Example](example/src/main.c)
+> For an example look at: [Example](src/main.c)
 
 First we need to include "tests.h". **(This does not work yet since dependencies are not done. If you still want to use this, copy the code into your own project)**
 
