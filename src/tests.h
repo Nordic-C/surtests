@@ -1,11 +1,4 @@
-#include "stdbool.h"
-#include "stdio.h"
-#include "util.h"
-#include <stdlib.h>
-
-#pragma once
-
-#ifdef TESTS
+#ifndef NOTESTS
 #define TEST(test_name, block)                                                 \
   {                                                                            \
     char name[] = #test_name;                                                  \
@@ -22,7 +15,7 @@
   }
 
 #else
-#define TEST
+#define TEST(a, b)
 #endif
 
 #define ASSERT(cond)                                                           \
