@@ -1,3 +1,5 @@
+#include "util.h"
+
 #ifndef NOTESTS
 #define TEST(test_name, block)                                                 \
   {                                                                            \
