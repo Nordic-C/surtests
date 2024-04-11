@@ -26,7 +26,7 @@ char **parseEnvVar(const char *envVar, size_t *valuesSize) {
       exit(EXIT_FAILURE);
     }
 
-    while (isalpha(*cur_ch) || isdigit(*cur_ch)) {
+    while (isalpha(*cur_ch) || isdigit(*cur_ch) || *cur_ch == '_') {
       temp_string[ts_size] = *cur_ch;
       ts_size++;
       cur_ch++;

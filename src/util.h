@@ -1,5 +1,6 @@
 #pragma once
 
+#include "parser.h"
 #include <stdbool.h>
 
 #define BLUE "\033[1;34m"
