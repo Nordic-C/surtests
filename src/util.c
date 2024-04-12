@@ -6,6 +6,8 @@
 
 bool canRunTest(const char name[]) {
     const char *env = getenv("SURTUR_TESTS");
+    if (env[0] == '*')
+        return true;
     size_t len = 0;
     if (env != NULL) {
         char **tests = parseEnvVar(env, &len);

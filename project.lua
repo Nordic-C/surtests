@@ -3,7 +3,7 @@ Name = "tests"
 Props = {
     std = "c17",
     version = "0.1",
-    type = "bin",
+    type = "lib",
     compiler = "clang",
 }
 
